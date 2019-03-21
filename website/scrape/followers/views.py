@@ -22,3 +22,6 @@ def get_followers(request):
             if tag['data-nav'] == 'followers':
                 return JsonResponse({'title': tag['title']})
         return JsonResponse({'error':True})
+@csrf_exempt
+def follower_page(request):
+    return render(request,template_name = 'followers/index.html')
